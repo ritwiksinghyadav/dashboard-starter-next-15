@@ -37,8 +37,11 @@ export default function UserAuthForm() {
 
   const onSubmit = async (data: UserFormValue) => {
     startTransition(() => {
-      console.log('continue with email clicked');
+      // In a real implementation, you would validate the email/password
+      // and authenticate the user with your backend
       toast.success('Signed In Successfully!');
+      // Redirect to dashboard after successful authentication
+      window.location.href = callbackUrl || '/dashboard/overview';
     });
   };
 

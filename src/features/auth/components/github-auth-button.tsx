@@ -13,7 +13,11 @@ export default function GithubSignInButton() {
       className='w-full'
       variant='outline'
       type='button'
-      onClick={() => console.log('continue with github clicked')}
+      onClick={() => {
+        // In a real implementation, you would implement GitHub OAuth
+        // For now, just redirect to dashboard
+        window.location.href = callbackUrl || '/dashboard/overview';
+      }}
     >
       <Icons.github className='mr-2 h-4 w-4' />
       Continue with Github
